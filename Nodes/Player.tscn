@@ -271,18 +271,30 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(1.02555, 0.974449)
+z_index = 1
+z_as_relative = false
+collision_mask = 3
 script = ExtResource("2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1, 0.980431)
+z_index = 1
 texture = ExtResource("1")
 centered = false
 offset = Vector2(-16, -58)
 hframes = 4
 vframes = 2
-frame = 2
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.117647)
+position = Vector2(2.92526, -13.3409)
+texture = ExtResource("1")
+offset = Vector2(0.5, -0.5)
+region_enabled = true
+region_rect = Rect2(3, 96, 27, 28)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0.5, -8)
 shape = SubResource("1")
 
@@ -296,5 +308,5 @@ tree_root = SubResource("AnimationNodeStateMachine_yob46")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_hyy3q")
-parameters/Idle/blend_position = Vector2(0, 0)
+parameters/Idle/blend_position = Vector2(0, 1)
 parameters/Walk/blend_position = Vector2(0, 0)

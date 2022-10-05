@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://eu4f7sl5c338"]
+[gd_scene load_steps=5 format=3 uid="uid://c3sliisq8nfvx"]
 
 [ext_resource type="Script" path="res://Scripts/Stair.gd" id="1_v48fx"]
 [ext_resource type="Texture2D" uid="uid://bodffla2dw5ai" path="res://Assets/Tiles/Struct.png" id="1_ym2ia"]
@@ -21,7 +21,7 @@ texture = ExtResource("1_ym2ia")
 centered = false
 offset = Vector2(-16, -80)
 region_enabled = true
-region_rect = Rect2(32, 32, 64, 96)
+region_rect = Rect2(224, 160, 64, 96)
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 position = Vector2(-12, -32)

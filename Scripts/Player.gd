@@ -6,8 +6,17 @@ extends CharacterBody2D
 @onready var n_animation_tree = $AnimationTree;
 @onready var n_animation_fsm : AnimationNodeStateMachinePlayback = n_animation_tree.get("parameters/playback");
 
+@onready var _player_vars = get_node("/root/GlobalPlayerVars");
+
 func _ready():
+	_player_vars.collision_mask = collision_mask;
+	_player_vars.z_index = z_index;
+	_player_vars.layer_down();
 	update_animation_blend_pos(e_starting_dir);
+
+func _process(_delta):
+	collision_mask = _player_vars.collision_mask;
+	z_index = _player_vars.z_index;
 
 func _physics_process(_delta):
 	var input_dir : Vector2 = get_input(); 
